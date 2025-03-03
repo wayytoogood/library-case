@@ -19,9 +19,19 @@ cd ./api && npm run dev
 
 ### Database Setup
 
-Before running the backend, a new database must be created, and the `ddl.sql` file should be injected into it. This file also includes mock data for initial setup.
+Before running the backend, you need to create a new database and inject the SQL schema from the `ddl.sql` file located in the `api` directory. This file also seeds mock data.
 
-## Setting Up the Frontend
+### Environment Variables
+
+Since the backend uses **Prisma ORM**, you must provide a database connection URL in the `.env` file located in the root of the `api` directory. You can refer to the official Prisma documentation for more details: [Prisma Connection URLs](https://www.prisma.io/docs/orm/reference/connection-urls).
+
+For example, if using **PostgreSQL**, your `.env` file should contain:
+
+```sh
+DATABASE_URL="postgresql://username:password@localhost:5432/database-name?schema=public"
+```
+
+## Frontend Setup
 
 To start the frontend application, run the following command:
 
